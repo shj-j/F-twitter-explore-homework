@@ -5,7 +5,7 @@
 header{
   @include heading(15px);
   padding: $padding-y $padding-x;
-  border-block-end:1px solid $border-color;
+  border-block-end: 1px solid $border-color;
 }
 
 .header-btn{
@@ -23,4 +23,49 @@ header{
       border: none;
     }
   }
+}
+standard-layout{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main{
+  @extend standard-layout;
+  height: 90vh;
+}
+.form-section{
+  @extend standard-layout;
+  border: 1px solid $border-color;
+}
+form{
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+  a{
+    color: $primary-color
+  }
+  .or{
+    text-align: center;
+  }
+}
+
+input[type='text']{
+  border: none;
+  border-block-end: 1px solid $border-color;
+  background: $body-bg;
+  width: 100%;
+}
+
+input[type='submit']{
+  height: 30px;
+  border-radius: 80px;
+}
+.login-btn{
+  @include button-style($body-bg, $primary-color, 100%);
+  border: 1px $primary-color solid;
+  margin-top: 10px;
+}
+.register-btn{
+  @include button-style($primary-color, white, 100%);
+  border: none;
 }
