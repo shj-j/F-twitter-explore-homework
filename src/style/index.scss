@@ -1,3 +1,26 @@
 @import "variables";
 @import "mixins";
 @import "reboot";
+
+header{
+  @include heading(15px);
+  padding: $padding-y $padding-x;
+  border-block-end:1px solid $border-color;
+}
+
+.header-btn{
+  display: flex;
+  button{
+    height: 30px;
+    border-radius: 80px;
+    &:first-child{
+      @include button-style($body-bg, $primary-color, 80px);
+      border: 1px $primary-color solid;
+      margin-right: 10px;
+    }
+    &:last-child{
+      @include button-style($primary-color, white, 80px);
+      border: none;
+    }
+  }
+}

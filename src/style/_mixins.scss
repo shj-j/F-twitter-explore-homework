@@ -1,4 +1,13 @@
 @mixin heading($font-size) {
   margin-top: 0;
+  display: flex;
+  justify-content: space-between;
   font-size: $font-size;
+  align-items: center;
+}
+
+@mixin button-style($bg-color, $font-color, $width) {
+  background-color: $bg-color;
+  color: $font-color;
+  width: $width;
 }
