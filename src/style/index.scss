@@ -2,70 +2,75 @@
 @import "mixins";
 @import "reboot";
 
-header{
+//TODO feedback: 所有的css都放到这一个文件里面了，可以抽取出_header.scss和_main.scss文件，这就是SASS的其中一个功能：partial
+header {
   @include heading(15px);
   padding: $padding-y $padding-x;
   border-block-end: 1px solid $border-color;
 }
 
-.header-btn{
+.header-btn {
   display: flex;
-  button{
+  button {
     height: 30px;
     border-radius: 80px;
-    &:first-child{
+    &:first-child {
       @include button-style($body-bg, $primary-color, 80px);
       border: 1px $primary-color solid;
       margin-right: 10px;
     }
-    &:last-child{
+    &:last-child {
       @include button-style($primary-color, white, 80px);
       border: none;
     }
   }
 }
-standard-layout{
+//TODO feedback: 要么是%standard-layout，要么是.standard-layout
+standard-layout {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-main{
+main {
+  //TODO feedback: 应该使用@include而不是@extend, 建议去了解一下二者的区别
   @extend standard-layout;
   height: 90vh;
 }
-.form-section{
+.form-section {
+  //TODO feedback: 应该使用@include而不是@extend, 建议去了解一下二者的区别
   @extend standard-layout;
   border: 1px solid $border-color;
 }
-form{
+form {
   display: flex;
   flex-direction: column;
   margin: 25px;
-  a{
-    color: $primary-color
+  //TODO feedback: 应该多采用class选择器，而不是标签选择器
+  a {
+    color: $primary-color;
   }
-  .or{
+  .or {
     text-align: center;
   }
 }
 
-input[type='text']{
+input[type="text"] {
   border: none;
   border-block-end: 1px solid $border-color;
   background: $body-bg;
   width: 100%;
 }
 
-input[type='submit']{
+input[type="submit"] {
   height: 30px;
   border-radius: 80px;
 }
-.login-btn{
+.login-btn {
   @include button-style($body-bg, $primary-color, 100%);
   border: 1px $primary-color solid;
   margin-top: 10px;
 }
-.register-btn{
+.register-btn {
   @include button-style($primary-color, white, 100%);
   border: none;
 }
